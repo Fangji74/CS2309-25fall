@@ -27,13 +27,13 @@ string format_number(double num) {
   if (fabs(num - round(num)) < 1e-10) {
     return to_string(static_cast<long long>(round(num)));
   }
-  
+
   // 截取到4位小数
   double cut = static_cast<long long>(num * 10000) / 10000.0;
 
   //是小数，先格式化为4位小数
   stringstream temp;
-  temp << fixed << setprecision(5) << cut;//此处setprecision会进行四舍五入
+  temp << fixed << setprecision(4) << cut;//此处setprecision会进行四舍五入
   string str = temp.str();
 
   //删除末尾的0

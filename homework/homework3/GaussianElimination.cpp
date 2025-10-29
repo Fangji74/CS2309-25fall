@@ -41,7 +41,7 @@ string format_number(double num) {
 
   //是小数，先格式化为4位小数
   stringstream temp;
-  temp << fixed << setprecision(5) << cut;//此处setprecision会进行四舍五入
+  temp << fixed << setprecision(4) << cut;//此处setprecision会进行四舍五入
   string str = temp.str();
 
   //删除末尾的0
