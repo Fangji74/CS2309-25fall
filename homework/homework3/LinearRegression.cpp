@@ -134,7 +134,7 @@ string LinearRegression(double predict_x, vector<vector<double>> &equations) {
   b = Lxy / Lxx;
   a = (sum_y  - b * sum_x)/n;
   r = Lxy / sqrt(Lxx * Lyy);
-  result_r = format_number1(r);
+  result_r = format_number(r);
 
   //根据相关系数判断
   if (fabs(r) < 0.75) {
