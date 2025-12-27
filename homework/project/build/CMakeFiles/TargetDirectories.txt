@@ -1,0 +1,3 @@
+/home/foggy/cs2309/homework/project/build/CMakeFiles/mytool.dir
+/home/foggy/cs2309/homework/project/build/CMakeFiles/edit_cache.dir
+/home/foggy/cs2309/homework/project/build/CMakeFiles/rebuild_cache.dir
