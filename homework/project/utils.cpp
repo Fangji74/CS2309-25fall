@@ -28,7 +28,7 @@ bool isId(std::string &str) {
   }
 
   if (num_flag && char_flag &&
-      (str.length() == 15 || str.length() == 16)) { //观察样例发现id长度为15或16
+      (str.length() > 10 && str.length() < 20)) { //id长度大致区间
     return 1;
   } else {
     return 0;

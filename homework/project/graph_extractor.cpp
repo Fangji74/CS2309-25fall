@@ -399,6 +399,13 @@ void GraphExtractor::findIdsDeep(const json &j, vector<string> &neighbors,
       //处理当前值
       if (value.is_string()) {
         string str = value.get<string>();
+        //先进行提取，将可能是id的字符串提取出来
+        for(auto &it:node_map){
+          if(str.find(it.first) != string::npos){
+            str = it.first;
+            break;
+          }
+        }
         //检查是否是id且不是自身且在node_map中
         if (isId(str) && str != currentNodeId &&
             node_map.find(str) != node_map.end()) {
@@ -416,6 +423,12 @@ void GraphExtractor::findIdsDeep(const json &j, vector<string> &neighbors,
         findIdsDeep(elem, neighbors, excluded_set, currentNodeId);
       } else if (elem.is_string()) {
         string str = elem.get<string>();
+        //先进行提取，将可能是id的字符串提取出来
+        for(auto &it:node_map){
+          if(str.find(it.first) != string::npos){
+            str = it.first;
+          }
+        }
         if (isId(str) && str != currentNodeId) {
           neighbors.push_back(str);
         }
